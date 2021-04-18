@@ -1,7 +1,7 @@
 
 
 # Medicare In-Patient Data Analysis: What is Ailing the Elderly?
-### By: Brian Connel, Jeff Rosal, Ashok Bidani, and Michael Stewart
+
 
 
 ```python
@@ -54,7 +54,7 @@ df = pd.concat([df_2011,df_2012,df_2013,df_2014,df_2015])
 ```
 
 ## We realized early on that while there was an abundance of state-by-state data, none of it was normalized and that would impact statistical analysis.
-### To remedy this, Brian found a CSV of populations by year that also included regional information. By loading this into a dataframe, we could pull the population values into our main dataframe and normalize discharges by population
+### To remedy this, We found a CSV of populations by year that also included regional information. By loading this into a dataframe, we could pull the population values into our main dataframe and normalize discharges by population
 
 
 ```python
@@ -64,7 +64,7 @@ df_pop = pd.read_csv(population_path)
 
 ## We also realized early on that the DRG, Medicare's 'grouped diagnosis' term, is both a blessing a curse.
 ### DRG's simplify noise in the data by grouping codes with similar diagnoses together. However, there exists a plethora of DRG's that are similar for our purposes, but distinct due to things like complications or comorbidities.
-### To remedy this, Brian deployed RegEx to search through the dataframe of DRG's and replace the patterns with emptry strings:
+### To remedy this, We deployed RegEx to search through the dataframe of DRG's and replace the patterns with emptry strings:
 
 
 ```python
@@ -270,7 +270,7 @@ plt.show()
 ## It's notable there is a relatively large inflection beginning in 2013-2014.
 ### By reading the documentation, we found out that earlier datasets 2011-2013 contained only the top 100 DRG's (though ranking schema was not disclosed). After 2014, data would be available for all DRG's. This is why the number of discharges trend so closely.
 
-# ***Note Brian Wanted Regional Charts Here
+
 ## When we plotted the total of discharges by state we initially saw several large outliers, which could be explained by their large state populations having a larger number of elderly people.
 
 
